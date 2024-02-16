@@ -957,7 +957,7 @@ def Historial_Argentina(usuario,puesto,perfil):
 
     st.session_state.Historial_Argentina=False
     st.session_state.Capacitacion_Argentina=True
-    Capacitacion.Capacitacion_Argentina(usuario,puesto)
+    Capacitacion.Capacitacion_Argentina(usuario,puesto,perfil)
 
   # ----- Salir ---- #
     
