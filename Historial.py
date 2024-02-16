@@ -639,67 +639,67 @@ def Historial_Argentina(usuario,puesto,perfil):
 
     if personal_7=="Todos" and proceso_7_s=="Todos" and perfil_7_s=="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' ", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' ", con)
 
     elif personal_7=="Todos" and proceso_7_s=="Todos" and perfil_7_s!="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and perfil='{perfil_7_s}' ", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and perfil='{perfil_7_s}' ", con)
 
     elif personal_7=="Todos" and proceso_7_s !="Todos" and perfil_7_s=="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and proceso='{proceso_7_s}' ", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and proceso='{proceso_7_s}' ", con)
   
     elif personal_7=="Todos" and proceso_7_s !="Todos" and perfil_7_s!="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and proceso='{proceso_7_s}' and perfil='{perfil_7_s}' ", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and proceso='{proceso_7_s}' and perfil='{perfil_7_s}' ", con)
   
     elif personal_7=="Operarios" and proceso_7_s =="Todos" and perfil_7_s=="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and puesto='Operario Catastral'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and puesto='Operario Catastral'", con)
  
     elif personal_7=="Operarios" and proceso_7_s =="Todos" and perfil_7_s!="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and puesto='Operario Catastral' and perfil='{perfil_7_s}' ", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and puesto='Operario Catastral' and perfil='{perfil_7_s}' ", con)
  
     elif personal_7=="Operarios" and proceso_7_s !="Todos" and perfil_7_s=="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and puesto='Operario Catastral' and proceso='{proceso_7_s}' ", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and puesto='Operario Catastral' and proceso='{proceso_7_s}' ", con)
  
     elif personal_7=="Operarios" and proceso_7_s !="Todos" and perfil_7_s!="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and puesto='Operario Catastral' and proceso='{proceso_7_s}' and perfil='{perfil_7_s}' ", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and puesto='Operario Catastral' and proceso='{proceso_7_s}' and perfil='{perfil_7_s}' ", con)
 
     elif personal_7=="Propio" and proceso_7_s=="Todos" and perfil_7_s=="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and usuario='{usuario}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and usuario='{usuario}'", con)
 
     elif personal_7=="Propio" and proceso_7_s=="Todos" and perfil_7_s!="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and usuario='{usuario}' and perfil='{perfil_7_s}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and usuario='{usuario}' and perfil='{perfil_7_s}'", con)
 
     elif personal_7=="Propio" and proceso_7_s !="Todos" and perfil_7_s=="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and usuario='{usuario}' and proceso='{proceso_7_s}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and usuario='{usuario}' and proceso='{proceso_7_s}'", con)
 
     elif personal_7=="Propio" and proceso_7_s !="Todos" and perfil_7_s!="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and usuario='{usuario}' and proceso='{proceso_7_s}' perfil='{perfil_7_s}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and usuario='{usuario}' and proceso='{proceso_7_s}' perfil='{perfil_7_s}'", con)
 
     elif personal_7=="Personal Asignado" and proceso_7_s =="Todos" and perfil_7_s=="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and supervisor='{nombre_7}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and supervisor='{nombre_7}'", con)
 
     elif personal_7=="Personal Asignado" and proceso_7_s =="Todos" and perfil_7_s!="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and supervisor='{nombre_7}' and perfil='{perfil_7_s}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and supervisor='{nombre_7}' and perfil='{perfil_7_s}'", con)
 
     elif personal_7=="Personal Asignado" and proceso_7_s !="Todos" and perfil_7_s=="Todos":
       
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and supervisor='{nombre_7}' and proceso='{proceso_7_s}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and supervisor='{nombre_7}' and proceso='{proceso_7_s}'", con)
       
     elif personal_7=="Personal Asignado" and proceso_7_s !="Todos" and perfil_7_s!="Todos":
 
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques o parcelas as integer),cast(cubiertas y mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and supervisor='{nombre_7}' and proceso='{proceso_7_s}' and perfil='{perfil_7_s}'", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' and supervisor='{nombre_7}' and proceso='{proceso_7_s}' and perfil='{perfil_7_s}'", con)
            
     # ----- Reportes ---- #
 
@@ -726,7 +726,7 @@ def Historial_Argentina(usuario,puesto,perfil):
     placeholder17_7 = st.empty()
     producción_7=placeholder17_7.subheader("Resumen de Producción")  
 
-    data_2_r = data_1_r.groupby(["nombre", "fecha_finalizacion","proceso"], as_index=False)[["bloques o parcelas","cubiertas y mejoras","horas"]].agg(np.sum)
+    data_2_r = data_1_r.groupby(["nombre", "fecha_finalizacion","proceso"], as_index=False)[["bloques_o_parcelas","cubiertas_y_mejoras","horas"]].agg(np.sum)
 
     pivot_r=len(data_2_r.iloc[:,0])
 
@@ -757,7 +757,7 @@ def Historial_Argentina(usuario,puesto,perfil):
 
     else:
          
-      fig_producción_total = px.bar(data_3_r, x="fecha_finalizacion", y="bloques o parcelas", text="bloques o parcelas", color="proceso", barmode="group")
+      fig_producción_total = px.bar(data_3_r, x="fecha_finalizacion", y="bloques_o_parcelas", text="bloques_o_parcelas", color="proceso", barmode="group")
       fig_producción_total.update_traces(textposition="outside")
       placeholder23_7 = st.empty()
       grafico_producción_total= placeholder23_7.plotly_chart(fig_producción_total)
@@ -802,7 +802,7 @@ def Historial_Argentina(usuario,puesto,perfil):
     placeholder29_7 = st.empty()
     producción_7=placeholder29_7.subheader("Resumen de Producción")  
 
-    data_2_r = data_1_r.groupby(["nombre", "fecha_finalizacion","proceso"], as_index=False)[["bloques o parcelas","cubiertas y mejoras","horas"]].agg(np.sum)
+    data_2_r = data_1_r.groupby(["nombre", "fecha_finalizacion","proceso"], as_index=False)[["bloques_o_parcelas","cubiertas_y_mejoras","horas"]].agg(np.sum)
 
     pivot_r=len(data_2_r.iloc[:,0])
 
@@ -821,7 +821,7 @@ def Historial_Argentina(usuario,puesto,perfil):
   
     # ----- Total ---- #
 
-    data_3_r= data_1_r.groupby(["fecha_finalizacion","proceso"], as_index=False)["bloques o parcelas"].agg(np.sum)
+    data_3_r= data_1_r.groupby(["fecha_finalizacion","proceso"], as_index=False)["bloques_o_parcelas"].agg(np.sum)
 
     placeholder33_7 = st.empty()
     total_7=placeholder33_7.subheader("Totales")
@@ -833,7 +833,7 @@ def Historial_Argentina(usuario,puesto,perfil):
 
     else:
          
-      fig_producción_total = px.bar(data_3_r, x="fecha_finalizacion", y="bloques o parcelas", text="bloques o parcelas", color="proceso", barmode="group")
+      fig_producción_total = px.bar(data_3_r, x="fecha_finalizacion", y="bloques_o_parcelas", text="bloques_o_parcelas", color="proceso", barmode="group")
       fig_producción_total.update_traces(textposition="outside")
       placeholder35_7 = st.empty()
       grafico_producción_total= placeholder35_7.plotly_chart(fig_producción_total)
