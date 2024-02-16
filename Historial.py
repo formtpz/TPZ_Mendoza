@@ -393,7 +393,7 @@ def Historial_Costa_Rica(usuario,puesto,perfil):
 
     st.session_state.Historial_Costa_Rica=False
     st.session_state.Capacitacion_Costa_Rica=True
-    Capacitacion.Capacitacion_Costa_Rica(usuario,puesto)
+    Capacitacion.Capacitacion_Costa_Rica(usuario,puesto,perfil)
 
   # ----- Otros Registros ---- #
     
