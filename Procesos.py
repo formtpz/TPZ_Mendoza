@@ -193,7 +193,7 @@ def Procesos_Argentina(usuario,puesto,perfil):
         historial_2 = placeholder2_2.button("Historial",key="historial_2")
 
         placeholder3_2= st.sidebar.empty()
-        capacitacion_2 = placeholder2_2.button("Capacitaciones",key="capacitacion_2")
+        capacitacion_2 = placeholder3_2.button("Capacitaciones",key="capacitacion_2")
 
         placeholder4_2 = st.sidebar.empty()
         salir_2 = placeholder4_2.button("Salir",key="salir_2")
@@ -281,7 +281,7 @@ def Procesos_Argentina(usuario,puesto,perfil):
             placeholder7_2.empty()
             st.session_state.Procesos=True
             st.session_state.Cubiertas_Mejoras_Argentina=True
-            Cubiertas_Mejoras.Cubiertasd_Mejoras_Argetnina(usuario,puesto,perfil)
+            Cubiertas_Mejoras.Cubiertas_Mejoras_Argetnina(usuario,puesto,perfil)
 
     elif st.session_state.Procesos==True:
 
