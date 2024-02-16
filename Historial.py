@@ -745,7 +745,7 @@ def Historial_Argentina(usuario,puesto,perfil):
           
     # ----- Total ---- #
 
-    data_3_r= data_1_r.groupby(["fecha_finalizacion","proceso"], as_index=False)["bloques o parcelas"].agg(np.sum)
+    data_3_r= data_1_r.groupby(["fecha_finalizacion","proceso"], as_index=False)["bloques_o_parcelas"].agg(np.sum)
 
     placeholder21_7 = st.empty()
     total_7=placeholder21_7.subheader("Totales")
