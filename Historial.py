@@ -253,7 +253,7 @@ def Historial_Costa_Rica(usuario,puesto,perfil):
   
     # ----- Total ---- #
 
-    data_3_r= data_1_r.groupby(["fecha_finalizacion","proceso"], as_index=False)["bloques o parcelas"].agg(np.sum)
+    data_3_r= data_1_r.groupby(["fecha_finalizacion","proceso"], as_index=False)["bloques_o_parcelas"].agg(np.sum)
 
     placeholder33_7 = st.empty()
     total_7=placeholder33_7.subheader("Totales")
