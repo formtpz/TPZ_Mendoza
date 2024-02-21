@@ -220,12 +220,8 @@ def Cubiertas_Mejoras_Costa_Rica(usuario,puesto,perfil):
     con.commit()
     st.success('Reporte enviado correctamente')
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,bloques_o_parcelas,cubiertas_y_mejoras,horas)VALUES('{marca_10}','{usuario}','{nombre_10}','{perfil}','{puesto}','{supervisor_10}','Parcelas','{fecha_inicio_10}','{fecha_finalizacion_10}','{zona_10}','{bloques_10}','0','{horas_10}')")
-
-
 # ----- Cubiertas y Mejoras Argentina ---- #
   
-
 def Cubiertas_Mejoras_Argentina(usuario,puesto,perfil):
 
   # ----- Conexión, Botones y Memoria ---- #
