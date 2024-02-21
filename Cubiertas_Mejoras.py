@@ -45,7 +45,7 @@ def Cubiertas_Mejoras_Costa_Rica(usuario,puesto,perfil):
   salir_11 = placeholder7_11.button("Salir",key="salir_11")
 
   placeholder8_11 = st.empty()
-  parcelas_11 = placeholder8_11.title("Cubiertas y Mejoras")
+  cubiertas_mejoras_11 = placeholder8_11.title("Cubiertas y Mejoras")
 
   default_date_11 = datetime.now(pytz.timezone('America/Guatemala'))
 
@@ -59,7 +59,7 @@ def Cubiertas_Mejoras_Costa_Rica(usuario,puesto,perfil):
   zona_11= placeholder11_11.selectbox("Zona", options=("Beltran","El Salto","Gral Alvear","Junin","La Colonia Alvear","La Consulta","La Dormida","Las Catitas","Las Vegas","Malargue","Rivadavia","Rodeo Fray","San Carlos","San Martin","San Rafael","Tulumaya","Tunuyan","Tupungato",), key="zona_11")
        
   placeholder12_11= st.empty()
-  pacelas_11= placeholder12_11.number_input("Cantidad de Parcelas Finalizadas",min_value=1,step=1,key="parcelas_11")
+  parcelas_11= placeholder12_11.number_input("Cantidad de Parcelas Finalizadas",min_value=1,step=1,key="parcelas_11")
 
   placeholder13_11= st.empty()
   cubiertas_11= placeholder13_11.number_input("Cantidad de Cubiertas y Mejoras Finalizadas",min_value=1,step=1,key="cubiertas_11")
@@ -215,7 +215,7 @@ def Cubiertas_Mejoras_Costa_Rica(usuario,puesto,perfil):
     supervisor_11= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_11 = supervisor_11.loc[0,'supervisor']
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,bloques_o_parcelas,cubiertas_y_mejoras,horas)VALUES('{marca_11}','{usuario}','{nombre_11}','{perfil}','{puesto}','{supervisor_11}','Cubiertas y Mejoras','{fecha_inicio_11}','{fecha_finalizacion_11}','{zona_11}','{parcelas_11}','0','{horas_11}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,bloques_o_parcelas,cubiertas_y_mejoras,horas)VALUES('{marca_11}','{usuario}','{nombre_11}','{perfil}','{puesto}','{supervisor_11}','Cubiertas y Mejoras','{fecha_inicio_11}','{fecha_finalizacion_11}','{zona_11}','{parcelas_11}','{cubiertas_11}','{horas_11}')")
     con.commit()
     st.success('Reporte enviado correctamente')
 
@@ -250,7 +250,7 @@ def Cubiertas_Mejoras_Argentina(usuario,puesto,perfil):
   salir_11 = placeholder5_11.button("Salir",key="salir_11")
 
   placeholder6_11 = st.empty()
-  parcelas_11 = placeholder6_11.title("Cubiertas y Mejoras")
+  cubiertas_mejoras_11 = placeholder6_11.title("Cubiertas y Mejoras")
 
   default_date_11 = datetime.now(pytz.timezone('America/Argentina/Buenos_Aires'))
 
@@ -264,7 +264,7 @@ def Cubiertas_Mejoras_Argentina(usuario,puesto,perfil):
   zona_11= placeholder9_11.selectbox("Zona", options=("Beltran","El Salto","Gral Alvear","Junin","La Colonia Alvear","La Consulta","La Dormida","Las Catitas","Las Vegas","Malargue","Rivadavia","Rodeo Fray","San Carlos","San Martin","San Rafael","Tulumaya","Tunuyan","Tupungato",), key="zona_11")
        
   placeholder10_11= st.empty()
-  pacelas_11= placeholder10_11.number_input("Cantidad de Parcelas Finalizadas",min_value=1,step=1,key="parcelas_11")
+  parcelas_11= placeholder10_11.number_input("Cantidad de Parcelas Finalizadas",min_value=1,step=1,key="parcelas_11")
 
   placeholder11_11= st.empty()
   cubiertas_11= placeholder11_11.number_input("Cantidad de Cubiertas y Mejoras Finalizadas",min_value=1,step=1,key="cubiertas_11")
