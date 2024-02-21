@@ -190,7 +190,6 @@ def Parcelas_Costa_Rica(usuario,puesto,perfil):
     placeholder13_10.empty()
     placeholder14_10.empty()
     st.session_state.Parcelas_Costa_Rica=False
-    st.session_state.Conformacion=False
     st.session_state.Salir=True
     Salir.Salir()
 
