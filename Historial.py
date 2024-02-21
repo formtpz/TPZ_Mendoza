@@ -189,7 +189,7 @@ def Historial_Costa_Rica(usuario,puesto,perfil):
 
     else:
          
-      fig_producción_total = px.bar(data_3_r, x="fecha_finalizacion", y="bloques o parcelas", text="bloques o parcelas", color="proceso", barmode="group")
+      fig_producción_total = px.bar(data_3_r, x="fecha_finalizacion", y="bloques_o_parcelas", text="bloques o parcelas", color="proceso", barmode="group")
       fig_producción_total.update_traces(textposition="outside")
       placeholder23_7 = st.empty()
       grafico_producción_total= placeholder23_7.plotly_chart(fig_producción_total)
