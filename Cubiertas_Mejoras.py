@@ -8,8 +8,7 @@ import pytz
 from urllib.parse import urlparse
 import Procesos,Historial,Capacitacion,Otros_Registros,Bonos,Salir
 
-
-  # ----- Cubiertas y Mejoras Costa Rica ---- #
+# ----- Cubiertas y Mejoras Costa Rica ---- #
 
 def Cubiertas_Mejoras_Costa_Rica(usuario,puesto,perfil):
 
@@ -200,7 +199,6 @@ def Cubiertas_Mejoras_Costa_Rica(usuario,puesto,perfil):
     placeholder14_11.empty()
     placeholder15_11.empty()
     st.session_state.Cubiertas_Mejoras_Costa_Rica=False
-    st.session_state.Conformacion=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -216,7 +214,7 @@ def Cubiertas_Mejoras_Costa_Rica(usuario,puesto,perfil):
     supervisor_11= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_11 = supervisor_11.loc[0,'supervisor']
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,bloques_o_parcelas,cubiertas_y_mejoras,horas)VALUES('{marca_11}','{usuario}','{nombre_11}','{perfil}','{puesto}','{supervisor_11}','Cubiertas y Mejoras','{fecha_inicio_11}','{fecha_finalizacion_11}','{zona_11}','{parcelas_11}','0','{horas_11}')")
+    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,bloques_o_parcelas,cubiertas_y_mejoras,horas)VALUES('{marca_11}','{usuario}','{nombre_11}','{perfil}','{puesto}','{supervisor_11}','Cubiertas y Mejoras','{fecha_inicio_11}','{fecha_finalizacion_11}','{zona_11}','{parcelas_11}','{cubiertas_11}','{horas_11}')")
     con.commit()
     st.success('Reporte enviado correctamente')
 
@@ -353,7 +351,6 @@ def Cubiertas_Mejoras_Argentina(usuario,puesto,perfil):
     placeholder12_11.empty()
     placeholder13_11.empty()
     st.session_state.Cubiertas_Mejoras_Argentina=False
-    st.session_state.Conformacion=False
     st.session_state.Salir=True
     Salir.Salir()
 
