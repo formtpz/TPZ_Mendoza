@@ -212,7 +212,7 @@ def Cubiertas_Mejoras_Costa_Rica(usuario,puesto,perfil):
     
     nombre_11= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
     nombre_11 = nombre_11.loc[0,'nombre']
-      
+
     supervisor_11= pd.read_sql(f"select supervisor from usuarios where usuario ='{usuario}'",uri)
     supervisor_11 = supervisor_11.loc[0,'supervisor']
 
