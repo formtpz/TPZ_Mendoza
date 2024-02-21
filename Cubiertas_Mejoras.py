@@ -206,8 +206,6 @@ def Cubiertas_Mejoras_Costa_Rica(usuario,puesto,perfil):
 
   elif reporte_11:
 
-    cursor01.execute(f"INSERT INTO registro (marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,bloques_o_parcelas,cubiertas_y_mejoras,horas)VALUES('{marca_10}','{usuario}','{nombre_10}','{perfil}','{puesto}','{supervisor_10}','Parcelas','{fecha_inicio_10}','{fecha_finalizacion_10}','{zona_10}','{bloques_10}','0','{horas_10}')")
-
     cursor01=con.cursor()
 
     marca_11=datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d %H:%M:%S")
