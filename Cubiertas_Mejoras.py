@@ -198,6 +198,7 @@ def Cubiertas_Mejoras_Costa_Rica(usuario,puesto,perfil):
     placeholder13_11.empty()
     placeholder14_11.empty()
     placeholder15_11.empty()
+    st.session_state.Ingreso=False
     st.session_state.Cubiertas_Mejoras_Costa_Rica=False
     st.session_state.Salir=True
     Salir.Salir()
@@ -350,6 +351,7 @@ def Cubiertas_Mejoras_Argentina(usuario,puesto,perfil):
     placeholder11_11.empty()
     placeholder12_11.empty()
     placeholder13_11.empty()
+    st.session_state.Ingreso=False
     st.session_state.Cubiertas_Mejoras_Argentina=False
     st.session_state.Salir=True
     Salir.Salir()
