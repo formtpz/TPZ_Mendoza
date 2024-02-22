@@ -363,8 +363,8 @@ def Capacitacion_Costa_Rica(usuario,puesto,perfil):
           usuario_8= pd.read_sql(f"select usuario from usuarios where nombre ='{nombre}'",uri)
           usuario_8 = usuario_8.loc[0,'usuario']
           
-          perfil_8= pd.read_sql(f"select puesto from usuarios where nombre ='{nombre}'",uri)
-          perfil_8 = puesto_8.loc[0,'puesto']
+          perfil_8= pd.read_sql(f"select perfil from usuarios where nombre ='{nombre}'",uri)
+          perfil_8 = perfil_8.loc[0,'perfil']
 
           puesto_8= pd.read_sql(f"select puesto from usuarios where nombre ='{nombre}'",uri)
           puesto_8 = puesto_8.loc[0,'puesto']
@@ -651,8 +651,8 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
           usuario_8= pd.read_sql(f"select usuario from usuarios where nombre ='{nombre}'",uri)
           usuario_8 = usuario_8.loc[0,'usuario']
           
-          perfil_8= pd.read_sql(f"select puesto from usuarios where nombre ='{nombre}'",uri)
-          perfil_8 = puesto_8.loc[0,'puesto']
+          perfil_8= pd.read_sql(f"select perfil from usuarios where nombre ='{nombre}'",uri)
+          perfil_8 = perfil_8.loc[0,'perfil']
 
           puesto_8= pd.read_sql(f"select puesto from usuarios where nombre ='{nombre}'",uri)
           puesto_8 = puesto_8.loc[0,'puesto']
