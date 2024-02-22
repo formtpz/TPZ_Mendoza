@@ -399,57 +399,54 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
   historial_8 = placeholder3_8.button("Historial",key="historial_8")
 
   placeholder4_8 = st.sidebar.empty()
-  otros_registros_8 = placeholder4_8.button("Otros Registros",key="otros_registros_8")
+  salir_8 = placeholder4_8.button("Salir",key="salir_8")
 
-  placeholder5_8 = st.sidebar.empty()
-  salir_8 = placeholder5_8.button("Salir",key="salir_8")
-
-  placeholder6_8 = st.empty()
-  capacitacion_8 = placeholder6_8.title("Capacitaciones")
+  placeholder5_8 = st.empty()
+  capacitacion_8 = placeholder5_8.title("Capacitaciones")
 
   if puesto== "Coordinador":
 
     nombre_8= pd.read_sql(f"select nombre from usuarios where usuario='{usuario}'",uri)
     nombre_8 = nombre_8.loc[0,'nombre']
 
-    placeholder7_8 = st.empty()
-    capacitacion_registro_7 = placeholder7_8.subheader("Registro")
+    placeholder6_8 = st.empty()
+    capacitacion_registro_7 = placeholder6_8.subheader("Registro")
 
     data_personal_8 = pd.read_sql(f"select nombre from usuarios where estado='Activo'", con)
-    placeholder8_8 = st.empty()
-    personal_8= placeholder8_8.multiselect("Personal",data_personal_8,key="personal_8")
+    placeholder7_8 = st.empty()
+    personal_8= placeholder7_8.multiselect("Personal",data_personal_8,key="personal_8")
 
-    default_date_8 = datetime.now(pytz.timezone('America/Guatemala'))
+    default_date_8 = datetime.now(pytz.timezone('America/Argentina/Buenos_Aires'))
       
+    placeholder8_8= st.empty()
+    fecha_8= placeholder8_8.date_input("Fecha",value=default_date_8,key="fecha_8")
+
     placeholder9_8= st.empty()
-    fecha_8= placeholder9_8.date_input("Fecha",value=default_date_8,key="fecha_8")
+    tema_8=placeholder9_8.selectbox("Tema", options=("Bonos","Información General","Reportes y Registros","QGIS","Parcelas","Cubiertas y Mejoras","Otros"), key="tema_8")
 
     placeholder10_8= st.empty()
-    tema_8=placeholder10_8.selectbox("Tema", options=("Bonos","Información General","Reportes y Registros","QGIS","Parcelas","Cubiertas y Mejoras","Otros"), key="tema_8")
-
-    placeholder12_8= st.empty()
-    observaciones_8= placeholder12_8.text_input("Observaciones",key="observaciones_8")
+    observaciones_8= placeholder10_8.text_input("Observaciones",key="observaciones_8")
     
+    placeholder11_8= st.empty()
+    horas_8= placeholder11_8.number_input("Cantidad de Horas de Capacitación Individuales",min_value=0.0,key="horas_8")
+
+    placeholder12_8 = st.empty()
+    reporte_8 = placeholder12_8.button("Generar Reporte",key="reporte_8")
+
     placeholder13_8= st.empty()
-    horas_8= placeholder13_8.number_input("Cantidad de Horas de Capacitación Individuales",min_value=0.0,key="horas_8")
+    separador_8 = placeholder13_8.markdown("_____")
 
     placeholder14_8 = st.empty()
-    reporte_8 = placeholder14_8.button("Generar Reporte",key="reporte_8")
+    capacitacion_historial_8 = placeholder14_8.subheader("Historial")
 
-    placeholder15_8= st.empty()
-    separador_8 = placeholder15_8.markdown("_____")
+    placeholder15_8 = st.empty()
+    fecha_de__inicio_8 = placeholder15_8.date_input("Fecha de Inicio",value=default_date_8,key="fecha_de_inicio_8")
 
     placeholder16_8 = st.empty()
-    capacitacion_historial_8 = placeholder16_8.subheader("Historial")
-
-    placeholder17_8 = st.empty()
-    fecha_de__inicio_8 = placeholder17_8.date_input("Fecha de Inicio",value=default_date_8,key="fecha_de_inicio_8")
-
-    placeholder18_8 = st.empty()
-    fecha_de__finalizacion_8 = placeholder18_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
+    fecha_de__finalizacion_8 = placeholder16_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
       
-    placeholder19_8 = st.empty()
-    filtro_8 = placeholder19_8.selectbox("Filtro", options=("Todos","Operarios","Propio","Personal Asignado","Reportados"), key="filtro_8")
+    placeholder17_8 = st.empty()
+    filtro_8 = placeholder17_8.selectbox("Filtro", options=("Todos","Operarios","Propio","Personal Asignado","Reportados"), key="filtro_8")
 
     if filtro_8=="Todos":
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
@@ -471,41 +468,41 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
     nombre_8= pd.read_sql(f"select nombre from usuarios where usuario ='{usuario}'",uri)
     nombre_8 = nombre_8.loc[0,'nombre']   
 
-    placeholder8_8 = st.empty()
-    capacitacion_registro_8 = placeholder8_8.subheader("Registro")
+    placeholder6_8 = st.empty()
+    capacitacion_registro_8 = placeholder6_8.subheader("Registro")
 
     data_personal_8 = pd.read_sql(f"select nombre from usuarios where estado='Activo' and supervisor='{nombre_8}' or usuario='{usuario}'", con)
-    placeholder9_8 = st.empty()
-    personal_8= placeholder9_8.multiselect("Personal",data_personal_8,key="personal_8")
+    placeholder7_8 = st.empty()
+    personal_8= placeholder7_8.multiselect("Personal",data_personal_8,key="personal_8")
 
-    default_date_8 = datetime.now(pytz.timezone('America/Guatemala'))
+    default_date_8 = datetime.now(pytz.timezone('America/Argentina/Buenos_Aires'))
       
-    placeholder11_8= st.empty()
-    tema_8=placeholder18_8.selectbox("Tema", options=("Bonos","Información General","Reportes y Registros","QGIS","Parcelas","Cubiertas y Mejoras","Otros"), key="tema_8")
+    placeholder8_8= st.empty()
+    tema_8=placeholder8_8.selectbox("Tema", options=("Bonos","Información General","Reportes y Registros","QGIS","Parcelas","Cubiertas y Mejoras","Otros"), key="tema_8")
+
+    placeholder9_8= st.empty()
+    observaciones_8= placeholder9_8.text_input("Observaciones",key="observaciones_8")
+    
+    placeholder10_8= st.empty()
+    horas_8= placeholder10_8.number_input("Cantidad de Horas de Capacitación Individuales",min_value=0.0,key="horas_8")
+
+    placeholder11_8 = st.empty()
+    reporte_8 = placeholder11_8.button("Generar Reporte",key="reporte_8")
 
     placeholder12_8= st.empty()
-    observaciones_8= placeholder12_8.text_input("Observaciones",key="observaciones_8")
-    
-    placeholder13_8= st.empty()
-    horas_8= placeholder13_8.number_input("Cantidad de Horas de Capacitación Individuales",min_value=0.0,key="horas_8")
+    separador_8 = placeholder12_8.markdown("_____")
+
+    placeholder13_8 = st.empty()
+    capacitacion_historial_8 = placeholder13_8.subheader("Historial")
 
     placeholder14_8 = st.empty()
-    reporte_8 = placeholder14_8.button("Generar Reporte",key="reporte_8")
+    fecha_de__inicio_8 = placeholder14_8.date_input("Fecha de Inicio",value=default_date_8,key="fecha_de_inicio_8")
 
-    placeholder15_8= st.empty()
-    separador_8 = placeholder15_8.markdown("_____")
-
-    placeholder16_8 = st.empty()
-    capacitacion_historial_8 = placeholder16_8.subheader("Historial")
-
-    placeholder17_8 = st.empty()
-    fecha_de__inicio_8 = placeholder17_8.date_input("Fecha de Inicio",value=default_date_8,key="fecha_de_inicio_8")
-
-    placeholder18_8 = st.empty()
-    fecha_de__finalizacion_8 = placeholder18_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
+    placeholder15_8 = st.empty()
+    fecha_de__finalizacion_8 = placeholder15_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
       
-    placeholder19_8 = st.empty()
-    filtro_8 = placeholder19_8.selectbox("Filtro", options=("Todos","Operarios","Propio","Personal Asignado","Reportados"), key="filtro_8")
+    placeholder16_8 = st.empty()
+    filtro_8 = placeholder16_8.selectbox("Filtro", options=("Todos","Operarios","Propio","Personal Asignado","Reportados"), key="filtro_8")
 
     if filtro_8=="Todos":
       data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
@@ -524,24 +521,24 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
 
   elif puesto=="Operario Catastral":
 
-    placeholder20_8 = st.empty()
-    capacitacion_historial_8 = placeholder20_8.subheader("Historial")
+    placeholder17_8 = st.empty()
+    capacitacion_historial_8 = placeholder17_8.subheader("Historial")
 
-    default_date_8 = datetime.now(pytz.timezone('America/Guatemala'))
+    default_date_8 = datetime.now(pytz.timezone('America/Argentina/Buenos_Aires'))
 
-    placeholder21_8 = st.empty()
-    fecha_de__inicio_8 = placeholder21_8.date_input("Fecha de Inicio",value=default_date_8,key="fecha_de_inicio_8")
+    placeholder18_8 = st.empty()
+    fecha_de__inicio_8 = placeholder18_8.date_input("Fecha de Inicio",value=default_date_8,key="fecha_de_inicio_8")
 
-    placeholder22_8 = st.empty()
-    fecha_de__finalizacion_8 = placeholder22_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
+    placeholder19_8 = st.empty()
+    fecha_de__finalizacion_8 = placeholder19_8.date_input("Fecha de Finalización",value=default_date_8,key="fecha_de_finalizacion_8")
       
     data = pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,fecha,tema,observaciones,horas,reporte from capacitaciones where usuario='{usuario}' and fecha>='{fecha_de__inicio_8}' and fecha<='{fecha_de__finalizacion_8}'", con)
 
-  placeholder23_8 = st.empty()
-  histo_8= placeholder23_8.dataframe(data=data)
+  placeholder20_8 = st.empty()
+  histo_8= placeholder20_8.dataframe(data=data)
 
-  placeholder24_8 = st.empty()
-  descarga_8 = placeholder24_8.download_button("Decargar CSV",data=data.to_csv(),mime="text/csv",key="descarga_8")
+  placeholder21_8 = st.empty()
+  descarga_8 = placeholder21_8.download_button("Decargar CSV",data=data.to_csv(),mime="text/csv",key="descarga_8")
 
   # ----- Procesos ---- #
     
@@ -551,9 +548,9 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
     placeholder3_8.empty()
     placeholder4_8.empty()
     placeholder5_8.empty()   
-    placeholder6_8.empty()
-    placeholder7_8.empty()
     if puesto=="Supervisor" or puesto=="Coordinador":
+      placeholder6_8.empty()
+      placeholder7_8.empty()
       placeholder8_8.empty()
       placeholder9_8.empty()
       placeholder10_8.empty()
@@ -563,18 +560,15 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
       placeholder14_8.empty()
       placeholder15_8.empty()  
       placeholder16_8.empty()
+    elif puesto=="Operario Catastral":
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral":
-      placeholder20_8.empty()
-      placeholder21_8.empty()
-      placeholder22_8.empty()
-    placeholder23_8.empty()
-    placeholder24_8.empty()
+    placeholder20_8.empty()
+    placeholder21_8.empty()
     st.session_state.Procesos=False
-    st.session_state.Capacitacion_Costa_Rica=False
-    Procesos.Procesos_Costa_Rica(usuario,puesto,perfil)
+    st.session_state.Capacitacion_Argentina=False
+    Procesos.Procesos_Argentina(usuario,puesto,perfil)
                 
   # ----- Historial ---- #
     
@@ -584,9 +578,9 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
     placeholder3_8.empty()
     placeholder4_8.empty()
     placeholder5_8.empty()   
-    placeholder6_8.empty()
-    placeholder7_8.empty()
     if puesto=="Supervisor" or puesto=="Coordinador":
+      placeholder6_8.empty()
+      placeholder7_8.empty()
       placeholder8_8.empty()
       placeholder9_8.empty()
       placeholder10_8.empty()
@@ -596,84 +590,15 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
       placeholder14_8.empty()
       placeholder15_8.empty()  
       placeholder16_8.empty()
+    elif puesto=="Operario Catastral":
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral":
-      placeholder20_8.empty()
-      placeholder21_8.empty()
-      placeholder22_8.empty()
-    placeholder23_8.empty()
-    placeholder24_8.empty()
-    st.session_state.Capacitacion_Costa_Rica=False
-    st.session_state.Historial_Costa_Rica=True
-    Historial.Historial_Costa_Rica(usuario,puesto,perfil)
-
-  # ----- Otros Registros ---- #
-    
-  elif otros_registros_8:
-    placeholder1_8.empty()
-    placeholder2_8.empty()
-    placeholder3_8.empty()
-    placeholder4_8.empty()
-    placeholder5_8.empty()   
-    placeholder6_8.empty()
-    placeholder7_8.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
-      placeholder8_8.empty()
-      placeholder9_8.empty()
-      placeholder10_8.empty()
-      placeholder11_8.empty()
-      placeholder12_8.empty()
-      placeholder13_8.empty()
-      placeholder14_8.empty()
-      placeholder15_8.empty()  
-      placeholder16_8.empty()
-      placeholder17_8.empty()
-      placeholder18_8.empty()
-      placeholder19_8.empty()
-    elif puesto=="Operario Catastral":
-      placeholder20_8.empty()
-      placeholder21_8.empty()
-      placeholder22_8.empty()
-    placeholder23_8.empty()
-    placeholder24_8.empty()
-    st.session_state.Capacitacion_Costa_Rica=False
-    st.session_state.Otros_Registros=True
-    Otros_Registros.Otros_Registros(usuario,puesto,perfil)
-
-  # ----- Bonos ---- #
-    
-  elif bonos_8:
-    placeholder1_8.empty()
-    placeholder2_8.empty()
-    placeholder3_8.empty()
-    placeholder4_8.empty()
-    placeholder5_8.empty()   
-    placeholder6_8.empty()
-    placeholder7_8.empty()
-    if puesto=="Supervisor" or puesto=="Coordinador":
-      placeholder8_8.empty()
-      placeholder9_8.empty()
-      placeholder10_8.empty()
-      placeholder11_8.empty()
-      placeholder12_8.empty()
-      placeholder13_8.empty()
-      placeholder14_8.empty()
-      placeholder15_8.empty()  
-      placeholder16_8.empty()
-      placeholder17_8.empty()
-      placeholder18_8.empty()
-      placeholder19_8.empty()
-    elif puesto=="Operario Catastral":
-      placeholder20_8.empty()
-      placeholder21_8.empty()
-      placeholder22_8.empty()
-    placeholder23_8.empty()
-    placeholder24_8.empty()
-    st.session_state.Capacitacion_Costa_Rica=False
-    st.session_state.Bonos=True
-    Bonos.Bonos(usuario,puesto,perfil)
+    placeholder20_8.empty()
+    placeholder21_8.empty()
+    st.session_state.Capacitacion_Argentina=False
+    st.session_state.Historial_Argentina=True
+    Historial.Historial_Argentina(usuario,puesto,perfil)
     
   # ----- Salir ---- #
     
@@ -683,9 +608,9 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
     placeholder3_8.empty()
     placeholder4_8.empty()
     placeholder5_8.empty()   
-    placeholder6_8.empty()
-    placeholder7_8.empty()
     if puesto=="Supervisor" or puesto=="Coordinador":
+      placeholder6_8.empty()
+      placeholder7_8.empty()
       placeholder8_8.empty()
       placeholder9_8.empty()
       placeholder10_8.empty()
@@ -695,17 +620,14 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
       placeholder14_8.empty()
       placeholder15_8.empty()  
       placeholder16_8.empty()
+    elif puesto=="Operario Catastral":
       placeholder17_8.empty()
       placeholder18_8.empty()
       placeholder19_8.empty()
-    elif puesto=="Operario Catastral":
-      placeholder20_8.empty()
-      placeholder21_8.empty()
-      placeholder22_8.empty()
-    placeholder23_8.empty()
-    placeholder24_8.empty()
+    placeholder20_8.empty()
+    placeholder21_8.empty()
     st.session_state.Ingreso=False
-    st.session_state.Capacitacion_Costa_Rica=False
+    st.session_state.Capacitacion_Argentina=False
     st.session_state.Salir=True
     Salir.Salir()
 
@@ -724,7 +646,7 @@ def Capacitacion_Argentina(usuario,puesto,perfil):
         for nombre in personal_8:
           cursor01=con.cursor()
           
-          marca_8= datetime.now(pytz.timezone('America/Guatemala')).strftime("%Y-%m-%d %H:%M:%S")
+          marca_8= datetime.now(pytz.timezone('America/Argentina/Buenos-Aires')).strftime("%Y-%m-%d %H:%M:%S")
 
           usuario_8= pd.read_sql(f"select usuario from usuarios where nombre ='{nombre}'",uri)
           usuario_8 = usuario_8.loc[0,'usuario']
