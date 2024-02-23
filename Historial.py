@@ -71,7 +71,7 @@ def Historial_Costa_Rica(usuario,puesto,perfil):
 
     if personal_7=="Todos" and proceso_7_s=="Todos" and perfil_7_s=="Todos":
         
-      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio<='{fecha_referencia_2_7}' or  fecha_finalizacion>='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}' ", con)
+      data_1_r=pd.read_sql(f"select cast(id as integer),marca,usuario,nombre,perfil,puesto,supervisor,proceso,fecha_inicio,fecha_finalizacion,zona,cast(bloques_o_parcelas as integer),cast(cubiertas_y_mejoras as integer),cast(horas as float) from registro where (fecha_inicio>='{fecha_referencia_1_7}' or fecha_inicio>='{fecha_referencia_2_7}') and (fecha_finalizacion<='{fecha_referencia_1_7}' or fecha_finalizacion<='{fecha_referencia_2_7}')", con)
 
     elif personal_7=="Todos" and proceso_7_s=="Todos" and perfil_7_s!="Todos":
         
