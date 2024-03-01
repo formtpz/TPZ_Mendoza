@@ -369,7 +369,7 @@ def Otros_Registros(usuario,puesto,perfil):
           usuario_13 = usuario_13.loc[0,'usuario']
 
           perfil_13= pd.read_sql(f"select perfil from usuarios where nombre ='{nombre}'",uri)
-          pperfil_13 = perfil_13.loc[0,'puesto']
+          perfil_13 = perfil_13.loc[0,'perfil']
 
           puesto_13= pd.read_sql(f"select puesto from usuarios where nombre ='{nombre}'",uri)
           puesto_13 = puesto_13.loc[0,'puesto']
