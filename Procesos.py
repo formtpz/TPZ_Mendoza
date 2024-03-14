@@ -281,7 +281,7 @@ def Procesos_Argentina(usuario,puesto,perfil):
             placeholder7_2.empty()
             st.session_state.Procesos=True
             st.session_state.Cubiertas_Mejoras_Argentina=True
-            Cubiertas_Mejoras.Cubiertas_Mejoras_Argetnina(usuario,puesto,perfil)
+            Cubiertas_Mejoras.Cubiertas_Mejoras_Argentina(usuario,puesto,perfil)
 
     elif st.session_state.Procesos==True:
 
