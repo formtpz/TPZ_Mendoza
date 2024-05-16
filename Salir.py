@@ -124,6 +124,4 @@ def Salir():
 
             st.header("Aplicación de uso exclusivo para el personal de Telespazio Argentina S.A.")
 
-            st.subheader("En caso de dudas favor revisar el siguiente video tutorial en el apartado 15. Registros y Bonos de la wiki")
-
             st.subheader("Para soporte técnico favor escribir a basilio.nunez@telespazio.com")
